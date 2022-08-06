@@ -1,4 +1,3 @@
-from sqlite3 import Row
 import numpy as np
 import pandas as pd
 import sys
@@ -6,10 +5,13 @@ import sys
 NaIndex = ['A','B','C','D']
 
 ## DataFrame
-a = {
+Info = {
     'Names': ['Alex','Camillo','Juan','Matias'], 
     'Age': [17,5,20,40],
-    'x': [1,2,3,4],
     'Country': ['Venezuela','Colombia','USA','Peru'],
-    'Merried': [False] * 4
+    'Merried': [False] * 4,
 }
+
+df = pd.DataFrame(Info, index=NaIndex)
+df.loc[df['Age'] > 17, 'Merried'] = True
+print(df)
