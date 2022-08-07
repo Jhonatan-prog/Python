@@ -1,7 +1,6 @@
-import numpy as np
-import pandas as pd
-import sys
+#### Series and creating a csv
 
+```python
 NaIndex = ['A','B','C','D']
 
 ## DataFrame
@@ -14,5 +13,9 @@ Info = {
 
 Serie1 = pd.Series(['Apple','Pineaple','Banana','Watermelon'])
 df = pd.DataFrame(Info, index=NaIndex)
+
+## csv
 df.to_csv('NewInfo')
 print(df)
+
+```

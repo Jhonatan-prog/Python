@@ -52,13 +52,14 @@ Info = {
 }
 
 df = pd.DataFrame(Info, index=NaIndex)
+df.index.name = 'Index'
 df['RamSum'] = df.iloc[:,1::6].sum(axis=1)
 print(df)
 
 ```
 
 
-#### Changing boolean values with .loc
+### Changing boolean values with .loc
 Firts parameter is the condition, the second is where you want the <br> 
 do the change, then, specify the change.
 
@@ -75,14 +76,26 @@ Info = {
 
 df = pd.DataFrame(Info, index=NaIndex)
 df.loc[df['Age'] > 17, 'Merried'] = True
+print(df.sample(1))
+print()
 print(df)
 
 ```
 
-#### Series and created a csv
+### Axes Iteration 
 
 ```python
-NaIndex = ['A','B','C','D']
+df = pd.DataFrame(Info)
+a=df.axes
+for i in a[1]:
+    print(i)
+
+```
+
+### A little of numpy
+
+```python
+NaIndex = ['A','B','C','D','E']
 
 ## DataFrame
 Info = {
@@ -92,9 +105,6 @@ Info = {
     'Merried': [False] * 4,
 }
 
-Serie1 = pd.Series(['Apple','Pineaple','Banana','Watermelon'])
-df = pd.DataFrame(Info, index=NaIndex)
-df.to_csv('NewInfo')
+df = pd.DataFrame(np.arange(15).reshape([5,3]), index=NaIndex, columns=['Z','X','Y'])
 print(df)
-
 ```
