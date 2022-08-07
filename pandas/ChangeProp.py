@@ -12,6 +12,7 @@ Info = {
     'Merried': [False] * 4,
 }
 
+Serie1 = pd.Series(['Apple','Pineaple','Banana','Watermelon'])
 df = pd.DataFrame(Info, index=NaIndex)
-df.loc[df['Age'] > 17, 'Merried'] = True
+df.to_csv('NewInfo')
 print(df)
