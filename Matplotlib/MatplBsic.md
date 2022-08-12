@@ -43,3 +43,28 @@ plt.savefig('Gas Graph', dpi=300)
 plt.show()
 
 ```
+
+```python
+## bins
+fifa = pd.read_csv('fifa_data.csv')
+fifa=fifa.rename(columns={'Unnamed: 0':'MyIndex'})
+fifa.index.name = 'Index'
+print(fifa)
+
+bins = [10,20,30,40,50,60,70,80,90,100,120]
+
+plt.hist(fifa.Overall, bins=bins, color='red')
+plt.xticks(bins)
+plt.show()
+## eleven bins of same width
+```
+
+```python
+## analyze the code
+#1
+left = fifa.loc[fifa['Preferred Foot'] == 'Left'].count()[0]
+right = fifa.loc[fifa['Preferred Foot'] == 'Right'].count()[0]
+
+#2
+Fifa.Weight = [x.strip('lbs') if type(x) == str else x for x in Fifa.Weight]
+```
