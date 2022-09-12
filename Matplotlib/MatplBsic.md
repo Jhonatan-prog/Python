@@ -41,5 +41,40 @@ plt.legend()
 plt.savefig('Gas Graph', dpi=300)
 
 plt.show()
+```
 
+## My own code
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+## Release Clause and Value
+Df_Fifa = pd.read_csv('fifa_data.csv')
+Df_Fifa.rename(columns={'Release Clause': 'Clause'}, inplace=True)
+Df_Fifa = Df_Fifa.head(10)
+
+## Replace Value
+clause = Df_Fifa.iloc[:,-1]
+ClauseStrip = [float(str(i).strip('€, M, K')) for i in clause]
+Df_Fifa.Clause = ClauseStrip
+
+## Replace value
+Value = Df_Fifa.iloc[:,11]
+ValueStrip = [float(str(j).strip('€, M, K')) for j in Value]
+Df_Fifa.Value = ValueStrip
+
+x = np.array(['b1','b2','b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10'])
+
+## Using matplotlib
+plt.bar(x, Df_Fifa.Clause, width=0.1, label='Clause(€)', color='green')
+plt.bar(x, Df_Fifa.Value, width=0.1, label='Value(€)', color='purple')
+
+plt.title('Clause and Value')
+plt.ylabel('Difference between Release Clause(€) and Character Value(€)')
+plt.xlabel('Bars')
+plt.legend() 
+
+plt.show()
 ```
