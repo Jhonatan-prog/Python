@@ -32,7 +32,7 @@ def Guessing(nums,plaNum):
                         print("End, you lost")
                         print()
 
-    except ValueError:
-        print("Sorry, but that is not a number")
+    except ValueError as e:
+        print("Sorry, but that is not a number. {}".format(e))
 
 Guessing(numbers,player1Num)

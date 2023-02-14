@@ -1,6 +1,6 @@
 [Documentation](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html)
 
-#### CSV Pandas
+#### CSV Pandas and File Handling python
 
 With **header** we can remove all the columns.
 With **na_values** we change the NA value
@@ -49,4 +49,52 @@ df = open('Problems.txt', "r")
 str = df.readline()
 df.close()
 print(df)
+
+## read mode
+
+with open('gas_prices.csv', 'r') as f:
+    size_to_read = 2
+    
+    f_contents = f.read(size_to_read)
+    print(f.tell)
+    
+    while len(f_contents) > 0:
+        print(f_contents, end='\n')
+        f_contents = f.read(size_to_read)
+
+## writing mode
+
+with open('gas_prices.csv', 'r') as rf:
+    with open('gas_pri_copy.txt', 'w') as wf:
+        for line in rf.read():
+            wf.write(line)
+
+with open('requestPractice.png', 'wb') as f:
+    f.write(r.content)
+
+### csv
+csv_file = open('Website-text_scrape.csv', 'w')
+csv_writer = csv.writer(csv_file)
+csv_writer.writerow(['headline','text','video_src'])
+```
+
+```python
+## os
+
+import os
+
+print(os.getcwd())
+os.chdir('/Users/Usuario/Documents/Python/Python/Matplotlib')
+
+os.makedirs('first')
+
+print(os.listdir())
+
+os.removedirs('first')
+
+print(os.listdir())
+
+##
+mod_time = os.stat('Matp.py').st_mtime
+print(datetime.fromtimestamp(mod_time))
 ```

@@ -1,13 +1,10 @@
 ## Dice roll simulator
-import numpy as np
-import datetime
-
 if __name__ == "__main__":
+    import numpy as np
+    
     D4 = np.array(np.arange(1,5))
-    D12 = np.array(np.arange(1,13))
-    D20 = np.array(np.arange(1,21))
 
-    def RollDice(D4,D12,D20):
+    def RollDice(D4):
         try:
             Roll = input("What roll do you want?: ")
             RNumbers = input("Write the number of Dices: ")
@@ -29,8 +26,7 @@ if __name__ == "__main__":
         except TypeError:
             print("Error")
 
-    RollDice(D4,D12,D20)
+    RollDice(D4)
 
-    ## function for the D12 and D20
 else:
     print("You are trying to run code in another module")

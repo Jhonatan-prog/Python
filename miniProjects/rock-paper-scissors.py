@@ -46,11 +46,10 @@ if __name__ == "__main__":
     doUWannaRepeat = input("Do you want to repeat the game? (write yes or not): ").lower().strip()
     while doUWannaRepeat == 'yes':
         repeat()
-        doUWannaRepeat = input("Do you want to repeat the game? (write yes or not): ")
+        doUWannaRepeat = input("Do you want to repeat the game? (write yes or not): ").lower().strip()
         
         if doUWannaRepeat == 'not':
             break
 
-    
 else:
     print("You are trying to run code in another module")
