@@ -1,5 +1,8 @@
 [Documentation](https://pandas.pydata.org/docs/reference/frame.html)
 
+.iloc: selects rows and columns at specific integer positions [rows,columns]
+.loc : selects rows and columns with specific labels
+
 ### .iloc pandas sum
 
 If you wanna sum two rows you need to select them and use **.sum(axis=1)** <br>
